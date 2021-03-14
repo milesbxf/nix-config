@@ -17,9 +17,4 @@
   networking.knownNetworkServices = networkInterfaces;
   networking.dns = ["1.1.1.1"];
 
-  fonts.enableFontDir = true;
-  fonts.fonts = [
-    pkgs.fantasque-sans-mono
-  ];
-
 }

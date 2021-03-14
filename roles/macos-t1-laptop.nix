@@ -1,7 +1,8 @@
 { pkgs, ... }:
 {
-  nix.package = pkgs.nix;
   nixpkgs.config.allowUnfree = true;
+
+  nix.package = pkgs.nix;
 
   nix.nixPath =
     [ "darwin=$HOME/.nix-defexpr/darwin"

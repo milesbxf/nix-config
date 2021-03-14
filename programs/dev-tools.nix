@@ -2,7 +2,6 @@
 {
   home.packages = with pkgs; [
     cfssl
-    go
     httpie
     hugo
     python27
@@ -10,4 +9,7 @@
     qrencode
     vagrant
   ];
+
+  programs.gh.enable = true;
+  programs.go.enable = true;
 }

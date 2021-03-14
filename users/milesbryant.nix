@@ -16,7 +16,7 @@
     imports = [
       ../programs/cli-utilities.nix
       ../programs/dev-tools.nix
-      ../programs/editor.nix
+      ../programs/neovim.nix
       ../programs/gimp.nix
       ../programs/git.nix
       ../programs/kitty.nix
