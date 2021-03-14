@@ -6,9 +6,13 @@ let userlib = import ../userlib {}; in
     python27Packages.pynvim
   ];
 
-  programs.neovim.enable = true;
-  programs.neovim.withNodeJs = true;
-
-  programs.neovim.extraConfig = (userlib.concatFiles (userlib.lsFiles ./configs/neovim));
+  programs.neovim = {
+    enable = true;
+    withNodeJs = true;
+    extraConfig = (userlib.concatFiles (userlib.lsFiles ./configs/neovim));
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
+  };
 }
 

@@ -22,6 +22,7 @@
       ../programs/kitty.nix
       ../programs/kubernetes.nix
       ../programs/shell.nix
+      ../programs/tmux.nix
     ];
   };
 
