@@ -1,15 +1,41 @@
 { pkgs, ...}:
 {
-  programs.zsh.enable = true;  # default shell on catalina
+  programs.zsh = {
+    enable = true;  # default shell on catalina
+    enableCompletion = true;
+    defaultKeymap = "viins";
 
-  # programs.zsh.enableFzfCompletion = true;
-  # programs.zsh.enableFzfGit = true;
-  # programs.zsh.enableFzfHistory = true;
-  # programs.zsh.enableSyntaxHighlighting = true;
+    history = {
+      extended = true;
+      save = 9223372036854775807;
+      size = 9223372036854775807;
+      path = ".zsh_history";
+    };
 
-  # programs.zsh.interactiveShellInit = "";
-  # programs.zsh.promptInit  = builtins.trace machine.hostname machine.hostname;
-  # programs.zsh.promptInit = "";
+    prezto = {
+      enable = true;
 
+      editor = {
+        keymap = "vi";
+        promptContext = true;
+      };
+
+      prompt = {
+        theme = "pure";
+      };
+      python = {
+        virtualenvAutoSwitch = true;
+        virtualenvInitialize = true;
+      };
+
+      terminal = {
+        autoTitle = true;
+      };
+
+      tmux = {
+        autoStartLocal = true;
+      };
+    };
+  };
 
 }

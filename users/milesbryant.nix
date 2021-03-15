@@ -5,10 +5,11 @@
     ../nix/userinfo.nix
   ];
 
-  users.knownUsers = [userinfo.username];
   users.users.${userinfo.username} = {
     uid = userinfo.uid;
     name = userinfo.username;
+    home = /Users + ("/" + userinfo.username);
+    shell = /Users + ("/" + userinfo.username) + /.nix-profile/bin/zsh;
   };
 
   home-manager.users.${userinfo.username} = { pkgs, ...}:{
@@ -24,6 +25,11 @@
       ../programs/shell.nix
       ../programs/tmux.nix
     ];
+
+    home.sessionVariables = {
+      EDITOR = "nvim";
+      VISUAL = "nvim";
+    };
   };
 
 }
