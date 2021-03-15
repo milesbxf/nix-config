@@ -7,35 +7,22 @@
     customPaneNavigationAndResize = true;
     escapeTime = 0;
     keyMode = "vi";
+    historyLimit = 50000;
 
     extraConfig = ''
-unbind '"'
-unbind %
-
-bind -n M-Left select-pane -L
-bind -n M-Right select-pane -R
-bind -n M-Up select-pane -U
-bind -n M-Down select-pane -D
 
 set -g mouse on
 
-# reduce ESC delay for neovim
-set -sg escape-time 0
-
 # window movement
-
 unbind p
 unbind n
 unbind [
 bind [ previous-window
 bind ] next-window
 
-
 # more vi-like copy
 bind Escape copy-mode
 bind p paste-buffer
-#bind-key -t vi-copy 'v' begin-selection
-#bind-key -t vi-copy 'y' copy-pipe 'xclip -in -selection clipboard'
 
 # theming
 set -g default-terminal "screen-256color"
@@ -89,28 +76,28 @@ bind-key M split-window -h "$EDITOR ~/.tmux.conf"
 set -g status-justify left
 set -g status-interval 2
 
-set -g @continuum-restore 'on'
     '';
 
     shortcut = "a";
     sensibleOnTop = true;
 
     plugins = with pkgs.tmuxPlugins; [
-      copycat
+      pain-control
+      vim-tmux-navigator
       open
-      resurrect
-      continuum
-      battery
-      cpu
-      online-status
+      {
+        plugin = resurrect;
+        extraConfig = "set -g @resurrect-strategy-nvim 'session'";
+      }
+      {
+        plugin = continuum;
+        extraConfig = ''
+          set -g @continuum-restore 'on'
+          set -g @continuum-save-interval '15' # minutes
+        '';
+      }
       prefix-highlight
       yank
-      fingers
-      pain-control
-
-      # set -g @plugin 'xamut/tmux-network-bandwidth'
-      # set -g @plugin 'christoomey/vim-tmux-navigator'
-      # set -g @plugin 'laktak/extrakto'
     ];
   };
 }
