@@ -14,5 +14,10 @@ let userlib = import ../userlib {}; in
     vimAlias = true;
     vimdiffAlias = true;
   };
+
+  programs.zsh.shellAliases = {
+    v = "nvim";
+    vw = "nvim -c VimwikiIndex";
+  };
 }
 

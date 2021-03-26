@@ -2,8 +2,17 @@
 {
   programs.zsh = {
     enable = true;  # default shell on catalina
+    enableAutosuggestions = true;
     enableCompletion = true;
     defaultKeymap = "viins";
+
+    autocd = true;
+    cdpath = [
+      "~/src/"
+      "~/src/github.com/"
+      "~/src/github.com/milesbxf/"
+      "~/src/github.com/monzo/"
+    ];
 
     history = {
       extended = true;
@@ -36,6 +45,27 @@
         autoStartLocal = true;
       };
     };
-  };
 
+    initExtra = ''
+      github_clone() {
+          [[ -z $1 ]] && echo "Error: ghc requires one argument, e.g. foo/bar" && return 1
+          echo "mkdir -p $(dirname ~/src/github.com/$1)"
+          mkdir -p $(dirname ~/src/github.com/$1)
+          git clone git@github.com:$1 ~/src/github.com/$1
+          cd ~/src/github.com/$1
+      }
+
+      find_and_replace() {
+          sd -i "''${1}" "''${2}" $(rg "''${1}" -l)
+      }
+  '';
+
+    shellAliases = {
+      le = "exa --long --tree --colour-scale --header --group --time-style=long-iso --ignore-glob='*.pyc' --git";
+      md = "mkdir -p";
+      far = "find_and_replace";
+      ghc = "github_clone";
+    };
+
+  };
 }
