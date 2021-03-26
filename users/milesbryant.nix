@@ -12,6 +12,8 @@
     shell = /Users + ("/" + userinfo.username) + /.nix-profile/bin/zsh;
   };
 
+  environment.systemPath = ["~/.nix-profile/bin"];
+
   home-manager.users.${userinfo.username} = { pkgs, ...}:{
     inherit userinfo;
     imports = [
