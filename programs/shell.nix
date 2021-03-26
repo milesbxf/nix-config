@@ -1,5 +1,9 @@
 { pkgs, ...}:
 {
+  home.packages = with pkgs; [
+      pkgs.prezto-prompt-mpor
+  ];
+
   programs.zsh = {
     enable = true;  # default shell on catalina
     enableAutosuggestions = true;
@@ -55,8 +59,7 @@
       ];
 
       prompt = {
-        theme = "pure";
-        # theme = "mpur";
+        theme = "mpor";
       };
       python = {
         virtualenvAutoSwitch = true;
@@ -76,6 +79,8 @@
     '';
 
     initExtra = ''
+      fpath+=("${pkgs.prezto-prompt-mpor}/share/zsh/site-functions")
+
       github_clone() {
           [[ -z $1 ]] && echo "Error: ghc requires one argument, e.g. foo/bar" && return 1
           echo "mkdir -p $(dirname ~/src/github.com/$1)"

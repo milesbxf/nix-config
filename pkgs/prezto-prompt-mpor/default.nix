@@ -1,7 +1,7 @@
 { stdenv, fetchFromGitHub }:
 
 stdenv.mkDerivation rec {
-  pname = "kubectl-aliases";
+  pname = "prezto-prompt-mpor";
   version = "1.0.0";
 
   src = [./src];
@@ -9,12 +9,12 @@ stdenv.mkDerivation rec {
   dontbuild = true;
 
   installPhase = ''
-    mkdir -p $out
-    ls -al
+    OUTDIR="''${out}/share/zsh/site-functions"
+    mkdir -p $OUTDIR
+    cp mpor.zsh $OUTDIR/prompt_mpor_setup
   '';
 
-  unpackPhase = ''
-  '';
+  unpackPhase = "";
 }
 
 
