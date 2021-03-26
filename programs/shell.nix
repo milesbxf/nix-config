@@ -45,6 +45,9 @@
         autoStartLocal = true;
       };
     };
+    envExtra = ''
+      [[ -s ~/.zshenv-local ]] && source ~/.zshenv-local
+    '';
 
     initExtra = ''
       github_clone() {
@@ -58,6 +61,8 @@
       find_and_replace() {
           sd -i "''${1}" "''${2}" $(rg "''${1}" -l)
       }
+
+      [[ -s ~/.zshrc-local ]] && source ~/.zshrc-local
   '';
 
     shellAliases = {
