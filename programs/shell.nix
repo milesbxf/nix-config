@@ -18,7 +18,9 @@
       extended = true;
       save = 9223372036854775807;
       size = 9223372036854775807;
-      path = ".zsh_history";
+      path = ".zhistory";
+      share = true;
+      ignoreDups = true;
     };
 
     prezto = {
@@ -28,6 +30,29 @@
         keymap = "vi";
         promptContext = true;
       };
+
+      extraConfig = ''
+        # Set key mode for INSERT mode
+        zstyle ':prezto:module:editor:info:keymap:primary' format $'%{\e[5 q%}'"%F{167}''${i_fa_chevron_right}%F{108}''${i_fa_chevron_right}%F{208}''${i_fa_chevron_right}"
+        # Set key mode for NORMAL mode
+        zstyle ':prezto:module:editor:info:keymap:alternate' format $'%{\e[1 q'"%F{142}''${i_fa_chevron_left}%F{214}''${i_fa_chevron_left}%F{109}''${i_fa_chevron_left}"
+      '';
+      extraModules = [];
+
+      pmodules = [
+        "environment"         # general shell options & env vars
+        "terminal"            # terminal window and tab titles
+        "editor"              # key bindings. Options set in Nix editor block above
+        "history"             # history options
+        "directory"           # directory options
+        "spectrum"            # easier use of 256 color
+        "utility"             # "general" aliases/functions
+        "completion"          # tab completion
+        "prompt"              # prompt themes
+        "syntax-highlighting" # zsh-syntax-highlighting
+        "tmux"                # tmux aliases/autolaunch options
+        "osx"                 # maxOS aliases/functions
+      ];
 
       prompt = {
         theme = "pure";
