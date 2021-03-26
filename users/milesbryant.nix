@@ -16,6 +16,10 @@
   programs.zsh.enable = true;
 
   home-manager.users.${userinfo.username} = { pkgs, ...}:{
+
+    # import custom packages
+    nixpkgs.overlays = [ (import ../pkgs) ];
+
     inherit userinfo;
     imports = [
       ../programs/cli-utilities.nix
