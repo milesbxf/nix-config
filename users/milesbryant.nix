@@ -12,7 +12,8 @@
     shell = /Users + ("/" + userinfo.username) + /.nix-profile/bin/zsh;
   };
 
-  environment.systemPath = ["~/.nix-profile/bin"];
+  # needs to be enabled both here and in home-manager
+  programs.zsh.enable = true;
 
   home-manager.users.${userinfo.username} = { pkgs, ...}:{
     inherit userinfo;
