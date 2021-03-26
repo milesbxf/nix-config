@@ -56,6 +56,7 @@
 
       prompt = {
         theme = "pure";
+        # theme = "mpur";
       };
       python = {
         virtualenvAutoSwitch = true;
@@ -95,6 +96,8 @@
       md = "mkdir -p";
       far = "find_and_replace";
       ghc = "github_clone";
+
+      nix-build-package = "nix-build -E 'with import <nixpkgs> {}; callPackage ./default.nix {}'";
     };
 
   };
