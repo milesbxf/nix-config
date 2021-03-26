@@ -4,6 +4,7 @@
       pkgs.kubectl
       pkgs.kubectx
       pkgs.kubernetes-helm
+      pkgs.kubectl-aliases
   ];
 
 
