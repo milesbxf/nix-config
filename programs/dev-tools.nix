@@ -15,5 +15,8 @@
   ];
 
   programs.gh.enable = true;
-  programs.go.enable = true;
+  programs.go = {
+    goPath = "";
+    enable = true;
+  };
 }
