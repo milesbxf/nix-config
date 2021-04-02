@@ -44,11 +44,11 @@
         # Set key mode for NORMAL mode
         zstyle ':prezto:module:editor:info:keymap:alternate' format $'%{\e[1 q'"%F{142}''${i_fa_chevron_left}%F{214}''${i_fa_chevron_left}%F{109}''${i_fa_chevron_left}"
 
-        fpath+=(~/src/github.com/milesbxf/zsh-prompt-mpor)
-
-        autoload -Uz promptinit
-        promptinit
-        prompt mpor
+        # uncomment to temporarily iterate on mpor
+        # fpath+=(~/src/github.com/milesbxf/zsh-prompt-mpor)
+        # autoload -Uz promptinit
+        # promptinit
+        # prompt mpor
       '';
       extraModules = [];
 
@@ -68,7 +68,7 @@
       ];
 
       prompt = {
-        theme = "mpor";
+        theme = "pure";
       };
       python = {
         virtualenvAutoSwitch = true;

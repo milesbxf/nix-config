@@ -1,11 +1,13 @@
 
 
 function prompt_mpor_setup {
-  PROMPT='%m%# '
-  RPROMPT=''
+  PS1='1%m%# $ '
+  RPS1=''
 }
 
-function prompt_name_precmd {}
+function prompt_mpor_precmd {
+  echo "hello from precmd"
+}
 
 function prompt_mpor_help {}
 
