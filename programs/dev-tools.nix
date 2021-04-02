@@ -19,4 +19,6 @@
     goPath = "";
     enable = true;
   };
+
+  home.sessionPath = [ "$HOME/bin" ];
 }

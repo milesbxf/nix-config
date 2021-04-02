@@ -1,7 +1,7 @@
 { pkgs, ...}:
 {
   home.packages = with pkgs; [
-      pkgs.prezto-prompt-mpor
+      # pkgs.prezto-prompt-mpor
   ];
 
   programs.zsh = {
@@ -36,10 +36,19 @@
       };
 
       extraConfig = ''
+        export __HM_SESS_VARS_SOURCED=""
+        source ~/.nix-profile/etc/profile.d/hm-session-vars.sh
+
         # Set key mode for INSERT mode
         zstyle ':prezto:module:editor:info:keymap:primary' format $'%{\e[5 q%}'"%F{167}''${i_fa_chevron_right}%F{108}''${i_fa_chevron_right}%F{208}''${i_fa_chevron_right}"
         # Set key mode for NORMAL mode
         zstyle ':prezto:module:editor:info:keymap:alternate' format $'%{\e[1 q'"%F{142}''${i_fa_chevron_left}%F{214}''${i_fa_chevron_left}%F{109}''${i_fa_chevron_left}"
+
+        fpath+=(~/src/github.com/milesbxf/zsh-prompt-mpor)
+
+        autoload -Uz promptinit
+        promptinit
+        prompt mpor
       '';
       extraModules = [];
 
@@ -74,13 +83,13 @@
         autoStartLocal = true;
       };
     };
+    # fpath+=("${pkgs.prezto-prompt-mpor}/share/zsh/site-functions")
     envExtra = ''
+
       [[ -s ~/.zshenv-local ]] && source ~/.zshenv-local
     '';
 
     initExtra = ''
-      fpath+=("${pkgs.prezto-prompt-mpor}/share/zsh/site-functions")
-
       github_clone() {
           [[ -z $1 ]] && echo "Error: ghc requires one argument, e.g. foo/bar" && return 1
           echo "mkdir -p $(dirname ~/src/github.com/$1)"
