@@ -4,6 +4,7 @@
     aws-vault
     awscli
     cfssl
+    gomplate
     httpie
     hugo
     kustomize
