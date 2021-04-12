@@ -8,6 +8,7 @@
     httpie
     hugo
     kustomize
+    kubie
     python27
     python38
     qrencode
