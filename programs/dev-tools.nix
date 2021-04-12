@@ -12,6 +12,7 @@
     python27
     python38
     qrencode
+    sd
     terraform_0_14
     vagrant
   ];

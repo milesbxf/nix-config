@@ -99,7 +99,7 @@
       }
 
       find_and_replace() {
-          sd -i "''${1}" "''${2}" $(rg "''${1}" -l)
+          sd "''${1}" "''${2}" $(rg "''${1}" -l)
       }
 
       [[ -s ~/.zshrc-local ]] && source ~/.zshrc-local
