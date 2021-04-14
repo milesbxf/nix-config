@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
       # pkgs.prezto-prompt-mpor
+      nix-zsh-completions
   ];
 
   programs.zsh = {
