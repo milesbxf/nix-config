@@ -110,9 +110,26 @@
       [[ -s ~/.zshrc-local ]] && source ~/.zshrc-local
 
       mkdir -p ~/.zfunc
-      rm -f ~/.zfunc/_poetry && poetry completions zsh > ~/.zfunc/_poetry
+
+      if [ $commands[poetry] ]; then
+        poetry() {
+          unfunction "$0"
+          rm -f ~/.zfunc/_poetry
+          poetry completions zsh > ~/.zfunc/_poetry
+          $0 $@
+        }
+      fi
+
+      if [ $commands[kustomize] ]; then
+        kustomize() {
+          unfunction "$0"
+          rm -f ~/.zfunc/_kustomize
+          kustomize completion zsh > ~/.zfunc/_kustomize
+          $0 $@
+        }
+      fi
+
       rm -f ~/.zfunc/_kubectl && kubectl completion zsh > ~/.zfunc/_kubectl
-      rm -f ~/.zfunc/_kustomize &&kustomize completion zsh > ~/.zfunc/_kustomize
       rm -f ~/.zfunc/_aws-vault &&aws-vault --completion-script-zsh  > ~/.zfunc/_aws-vault
 
       complete -o nospace -C ${pkgs.terraform}/bin/terraform terraform
