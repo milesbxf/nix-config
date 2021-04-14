@@ -9,6 +9,7 @@
     hugo
     kustomize
     kubie
+    poetry
     python27
     python38
     qrencode
