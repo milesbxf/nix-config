@@ -2,7 +2,7 @@
 {
   home.packages = with pkgs; [
     aws-vault
-    awscli
+    awscli2
     cfssl
     gomplate
     httpie
@@ -23,5 +23,5 @@
     enable = true;
   };
 
-  home.sessionPath = [ "$HOME/bin" ];
+  home.sessionPath = [ "$HOME/bin" "/usr/local/kubebuilder/bin" ];
 }
