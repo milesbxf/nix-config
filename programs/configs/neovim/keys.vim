@@ -28,7 +28,6 @@ noremap <leader>e :!zsh -c 'tmux send-keys -t {right-of} C-c C-c "<C-r><C-r>c" E
 "search in files with ripgrep
 noremap <leader>s :Find<cr>
 "search filenames with FZF
-noremap <leader>f :FzfPreviewMrwFiles<cr>
 
 nmap <Leader>f [fzf-p]
 xmap <Leader>f [fzf-p]
@@ -47,6 +46,7 @@ xnoremap          [fzf-p]gr    "sy:FzfPreviewProjectGrep<Space>-F<Space>"<C-r>=s
 nnoremap <silent> [fzf-p]t     :<C-u>FzfPreviewBufferTags<CR>
 nnoremap <silent> [fzf-p]q     :<C-u>FzfPreviewQuickFix<CR>
 nnoremap <silent> [fzf-p]l     :<C-u>FzfPreviewLocationList<CR>
+nnoremap <silent> [fzf-p]d     :<C-u>FzfPreviewDirectoryFiles<CR>
 
 "Search file history
 noremap <leader>hf :History<cr>
@@ -124,3 +124,6 @@ let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+
+noremap <leader>r :Neoformat<cr>
