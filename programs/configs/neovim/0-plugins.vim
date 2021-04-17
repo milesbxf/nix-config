@@ -129,6 +129,8 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 "Makes vim indentation PEP8 compatible
 Plug 'Vimjas/vim-python-pep8-indent'
 
+Plug 'zchee/deoplete-jedi'
+
 Plug 'heavenshell/vim-pydocstring'
 
 Plug 'LnL7/vim-nix'
