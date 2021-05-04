@@ -11,6 +11,7 @@
     kubie
     kustomize
     packer
+    nodejs-15_x
     poetry
     python27
     python38
