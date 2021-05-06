@@ -14,6 +14,7 @@
     python38
     qrencode
     sd
+    stern
     terraform_0_14
     vagrant
   ];
