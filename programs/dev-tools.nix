@@ -9,6 +9,7 @@
     hugo
     kustomize
     kubie
+    packer
     poetry
     python27
     python38
