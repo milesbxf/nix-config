@@ -21,8 +21,8 @@
 
     history = {
       extended = true;
-      save = 9223372036854775807;
-      size = 9223372036854775807;
+      save = 1000000000;
+      size = 1000000000;
       path = ".zhistory";
       share = true;
       ignoreDups = true;
