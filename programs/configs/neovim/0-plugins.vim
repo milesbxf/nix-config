@@ -123,6 +123,8 @@ Plug 'rodjek/vim-puppet'
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 
+Plug 'google/vim-jsonnet'
+
 " TEST govim
 " Plug 'file:///Users/milesbryant/src/github.com/myitcv/govim'
 
