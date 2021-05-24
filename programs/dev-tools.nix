@@ -7,8 +7,8 @@
     gomplate
     httpie
     hugo
-    kustomize
     kubie
+    kustomize
     packer
     poetry
     python27
@@ -18,6 +18,7 @@
     stern
     terraform_0_14
     vagrant
+    yq
   ];
 
   programs.gh.enable = true;
