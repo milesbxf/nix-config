@@ -4,6 +4,7 @@
     aws-vault
     awscli2
     cfssl
+    dua
     gomplate
     httpie
     hugo
