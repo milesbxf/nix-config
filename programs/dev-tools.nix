@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     aws-vault
     awscli2
+    cargo
     cfssl
     dua
     gomplate
@@ -16,6 +17,7 @@
     python27
     python38
     qrencode
+    rustc
     sd
     stern
     terraform_0_14
