@@ -16,7 +16,6 @@
     python27
     python38
     qrencode
-    rustup
     sd
     stern
     terraform_0_14
@@ -30,5 +29,5 @@
     enable = true;
   };
 
-  home.sessionPath = [ "$HOME/bin" "/usr/local/kubebuilder/bin" ];
+  home.sessionPath = [ "$HOME/bin" "/usr/local/kubebuilder/bin" "$HOME/.cargo/bin"];
 }

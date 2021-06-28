@@ -132,6 +132,9 @@
       rm -f ~/.zfunc/_kubectl && kubectl completion zsh > ~/.zfunc/_kubectl
       rm -f ~/.zfunc/_aws-vault &&aws-vault --completion-script-zsh  > ~/.zfunc/_aws-vault
 
+      rm -f ~/.zfunc/_rustup && rustup completions zsh > ~/.zfunc/_rustup
+      rm -f ~/.zfunc/_cargo && rustup completions zsh cargo > ~/.zfunc/_cargo
+
       complete -o nospace -C ${pkgs.terraform}/bin/terraform terraform
 
       fpath+=(~/.zfunc)
