@@ -4,5 +4,5 @@ let _ = import ../nix/userinfo.nix; in
   uid = 501;
   email = "miles@milesbxf.net";
 
-  gpgKeyName = "miles@milesbxf.net";
+  # gpgKeyName = "miles@milesbxf.net";
 }

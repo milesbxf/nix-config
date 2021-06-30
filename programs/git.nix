@@ -20,7 +20,10 @@
     signing = if config.userinfo.gpgKeyName != "" then {
       key = config.userinfo.gpgKeyName;
       signByDefault = true;
-    } else {};
+    } else {
+      key = "";
+      signByDefault = false;
+    };
 
     extraConfig = let userlib = import ../userlib {}; in (userlib.concatFiles (userlib.lsFiles ./configs/git));
   };
