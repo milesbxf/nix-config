@@ -85,7 +85,7 @@
       };
 
       tmux = {
-        autoStartLocal = true;
+        autoStartLocal = false;
       };
     };
     # fpath+=("${pkgs.prezto-prompt-mpor}/share/zsh/site-functions")
