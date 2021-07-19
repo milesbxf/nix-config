@@ -25,9 +25,10 @@
 
   programs.gh.enable = true;
   programs.go = {
+    package = pkgs.go_1_15;
     goPath = "";
     enable = true;
   };
 
-  home.sessionPath = [ "$HOME/bin" "/usr/local/kubebuilder/bin" "$HOME/.cargo/bin" "/usr/local/opt/go@1.15/bin"];
+  home.sessionPath = [ "$HOME/bin" "/usr/local/kubebuilder/bin" "$HOME/.cargo/bin"];
 }
