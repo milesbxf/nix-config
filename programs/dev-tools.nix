@@ -29,5 +29,5 @@
     enable = true;
   };
 
-  home.sessionPath = [ "$HOME/bin" "/usr/local/kubebuilder/bin" "$HOME/.cargo/bin"];
+  home.sessionPath = [ "$HOME/bin" "/usr/local/kubebuilder/bin" "$HOME/.cargo/bin" "/usr/local/opt/go@1.15/bin"];
 }
