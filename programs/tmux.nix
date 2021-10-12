@@ -28,34 +28,34 @@ bind p paste-buffer
 set -g default-terminal "screen-256color"
 set-option -ga terminal-overrides ",xterm-256color:Tc"
 
-set-window-option -g clock-mode-colour colour109
+set-window-option -g clock-mode-colour colour24
 set-window-option -g mode-style fg=colour196,bg=colour238,bold
 
-set -g pane-border-style fg=colour250
+set -g pane-border-style fg=colour239
 set -g pane-active-border-style fg=colour237
 
 set -g status-left-style 'none'
-set -g status-left "#{prefix_highlight} #[fg=colour241, bg=colour237, nobold, noitalics, nounderscore]"
+set -g status-left "#{prefix_highlight} #[fg=colour241, bg=colour223, nobold, noitalics, nounderscore]"
 set -g status-left-length '60'
 
-set-window-option -g window-status-current-format "#[fg=colour239, bg=colour248, :nobold, noitalics, nounderscore]#[fg=colour239, bg=colour214] #I #[fg=colour239, bg=colour214, bold] #W #[fg=colour214, bg=colour237, nobold]"
-set-window-option -g window-status-format "#[fg=colour237,bg=colour239,noitalics]#[fg=colour223,bg=colour239] #I #[fg=colour223, bg=colour239] #W #[fg=colour239, bg=colour237, noitalics]"
+set-window-option -g window-status-current-format "#[fg=colour239, bg=colour248, :nobold, noitalics, nounderscore]#[fg=colour239, bg=colour214] #I #[fg=colour239, bg=colour214, bold] #W #[fg=colour214, bg=colour223, nobold]"
+set-window-option -g window-status-format "#[fg=colour237,bg=colour250,noitalics]#[fg=colour237,bg=colour250] #I #[fg=colour237, bg=colour250] #W #[fg=colour239, bg=colour223, noitalics]"
 
 set -g status 'on'
 set -g status-position top
-set -g status-style bg=colour237,fg=colour223,'none'
+set -g status-style bg=colour223,fg=colour237,'none'
 set -g status-justify 'left'
 
 set-window-option -g window-status-style bg=default,fg=colour237,none
 set-window-option -g window-status-current-style bg=colour214,fg=colour237,bold
 
 
-set-window-option -g window-status-activity-style bg=colour237,fg=colour248
+set-window-option -g window-status-activity-style bg=colour223,fg=colour241
 
 set-window-option -g window-status-bell-style fg=colour255,bold,bg=colour1
 
-set -g message-style bg=colour239,fg=colour223
-set -g message-command-style bg=colour239,fg=colour223
+set -g message-style bg=colour250,fg=colour237
+set -g message-command-style bg=colour250,fg=colour237
 
 set-option -g display-panes-active-colour colour250 #fg2
 set-option -g display-panes-colour colour237 #bg1
