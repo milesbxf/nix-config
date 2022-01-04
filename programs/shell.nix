@@ -147,6 +147,7 @@
       md = "mkdir -p";
       far = "find_and_replace";
       ghc = "github_clone";
+      pr-slack = "gh pr view $(git branch --show-current) --json title,url --template \":github-favicon: {{.title}}\n:pr-arrow: {{.url}}\" | pbcopy";
 
       nix-build-package = "nix-build -E 'with import <nixpkgs> {}; callPackage ./default.nix {}'";
     };
