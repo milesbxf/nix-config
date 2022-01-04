@@ -15,7 +15,12 @@
     userName = config.userinfo.username;
     userEmail = config.userinfo.email;
 
-    delta.enable = true;
+    delta = {
+      enable = true;
+      options = {
+        syntax-theme = "Monokai Extended Light";
+      };
+    };
 
     signing = if config.userinfo.gpgKeyName != "" then {
       key = config.userinfo.gpgKeyName;
