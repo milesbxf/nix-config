@@ -21,7 +21,7 @@
     stern
     terraform_0_14
     vagrant
-    yq
+    yq-go
   ];
 
   programs.gh.enable = true;

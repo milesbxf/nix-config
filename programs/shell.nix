@@ -43,6 +43,7 @@
       extraConfig = ''
         export __HM_SESS_VARS_SOURCED=""
         source ~/.nix-profile/etc/profile.d/hm-session-vars.sh
+        [[ -f ~/.private-source ]] && source ~/.private-source
 
         # Set key mode for INSERT mode
         zstyle ':prezto:module:editor:info:keymap:primary' format $'%{\e[5 q%}'"%F{167}''${i_fa_chevron_right}%F{108}''${i_fa_chevron_right}%F{208}''${i_fa_chevron_right}"
