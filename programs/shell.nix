@@ -23,7 +23,7 @@
       extended = true;
       save = 1000000000;
       size = 1000000000;
-      path = ".zhistory";
+      path = "$HOME/.zsh_history";
       share = true;
       ignoreDups = true;
     };
