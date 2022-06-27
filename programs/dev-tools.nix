@@ -8,18 +8,14 @@
     dua
     gomplate
     httpie
-    hugo
     kubie
     kustomize
     packer
-    nodejs-15_x
     poetry
-    python27
     python38
     qrencode
     sd
     stern
-    terraform_0_14
     vagrant
     yq-go
   ];

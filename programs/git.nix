@@ -30,7 +30,24 @@
       signByDefault = false;
     };
 
-    extraConfig = let userlib = import ../userlib {}; in (userlib.concatFiles (userlib.lsFiles ./configs/git));
+    extraConfig = {
+      core = {
+        autocrlf = "input";
+        excludesfile = "/Users/milesbryant/.gitignore-global";
+      };
+      commit.template = "~/.gitmessage";
+      push.default = "current";
+      pull.rebase = true;
+      "remote \"origin\"".prune = true;
+      init.defaultBranch = "main";
+      merge.tool = "vimdiff";
+      mergetool.prompt = true;
+      "mergetool \"vimdiff\"".cmd = "nvim -f -c \"Gdiff\" \"$MERGED\"";
+      "url \"https://github.com/\"".insteadOf = "gh:";
+      "url \"https://gist.github.com/\"".insteadOf = "gist:";
+      "url \"https://bitbucket.org/\"".insteadOf = "bb:";
+      "url \"git@github.com:monzo/\"".insteadOf = "mz:";
+    };
   };
 
   programs.zsh.initExtra = ''

@@ -18,7 +18,7 @@
   home-manager.users.${userinfo.username} = { pkgs, ...}:{
 
     # import custom packages
-    nixpkgs.overlays = [ (import ../pkgs) ];
+    nixpkgs.overlays = [ (import ../pkgs) ] ++ (import ../overlays);
 
     inherit userinfo;
     imports = [
@@ -33,11 +33,14 @@
       ../programs/tmux.nix
     ];
 
-    home.sessionVariables = {
-      EDITOR = "nvim";
-      VISUAL = "nvim";
+    home = {
+      stateVersion = "21.05";
+      sessionVariables = {
+        EDITOR = "nvim";
+        VISUAL = "nvim";
 
-      BAT_THEME = "Monokai Extended Light";
+        BAT_THEME = "Monokai Extended Light";
+      };
     };
   };
 

@@ -2,8 +2,7 @@
 let userlib = import ../userlib {}; in 
 {
   home.packages = with pkgs; [
-    pythonPackages.pynvim
-    python27Packages.pynvim
+    python3Packages.pynvim
   ];
 
   programs.neovim = {
