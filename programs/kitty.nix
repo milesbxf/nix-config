@@ -1,6 +1,7 @@
 { config, pkgs, ...}:
 let userlib = import ../userlib {}; in 
 {
+  home.packages = [ pkgs.fantasque-sans-mono];
   programs.kitty.enable = true;
 
   programs.kitty.font = {
