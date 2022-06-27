@@ -26,7 +26,7 @@
 
   programs.gh.enable = true;
   programs.go = {
-    package = pkgs.go_1_16;
+    package = pkgs.go;
     goPath = "";
     enable = true;
   };
