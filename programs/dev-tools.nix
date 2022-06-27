@@ -17,6 +17,7 @@
     sd
     stern
     vagrant
+    viddy
     yq-go
   ];
 
