@@ -141,6 +141,7 @@
       complete -o nospace -C ${pkgs.terraform}/bin/terraform terraform
 
       fpath+=(~/.zfunc)
+      source ${pkgs.kubectl-aliases}/.kubectl_aliases
   '';
 
     shellAliases = {
@@ -151,6 +152,7 @@
       pr-slack = "gh pr view $(git branch --show-current) --json title,url --template \":github-favicon: {{.title}}\n:pr-arrow: {{.url}}\" | pbcopy";
 
       nix-build-package = "nix-build -E 'with import <nixpkgs> {}; callPackage ./default.nix {}'";
+      kube-nodeports = "kubectl get services '-o=custom-columns=NAME:.metadata.name,NODEPORT:.spec.ports[0].nodePort' --no-headers | grep -v '<none>' | sort -k 2n";
     };
 
   };
