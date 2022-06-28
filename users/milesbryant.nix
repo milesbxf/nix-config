@@ -22,13 +22,10 @@
 
     inherit userinfo;
     imports = [
-      ../programs/cli-utilities.nix
-      ../programs/dev-tools.nix
+      ../programs/packages.nix
       ../programs/neovim.nix
-      ../programs/gimp.nix
       ../programs/git.nix
       ../programs/kitty.nix
-      ../programs/kubernetes.nix
       ../programs/shell.nix
       ../programs/tmux.nix
     ];
