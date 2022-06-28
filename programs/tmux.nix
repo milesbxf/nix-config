@@ -89,13 +89,6 @@ set -g status-interval 2
         plugin = resurrect;
         extraConfig = "set -g @resurrect-strategy-nvim 'session'";
       }
-      {
-        plugin = continuum;
-        extraConfig = ''
-          set -g @continuum-restore 'on'
-          set -g @continuum-save-interval '15' # minutes
-        '';
-      }
       prefix-highlight
       yank
     ];
