@@ -28,6 +28,7 @@
     jq
     jsonnet
     k9s
+    krew
     kubectl
     kubectl-aliases
     kubectx
