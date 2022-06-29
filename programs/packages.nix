@@ -34,7 +34,7 @@
     kubectx
     kubernetes-helm
     kubie
-    kustomize
+    kustomize_3
     opa
     p7zip
     packer
