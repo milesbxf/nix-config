@@ -98,14 +98,6 @@ Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release' }
 Plug 'chrisbra/vim-diff-enhanced'
 
 
-"========= Colour schemes =========
-
-"Dark, retro colour scheme
-Plug 'morhetz/gruvbox'
-"Solarized colour scheme
-Plug 'romainl/flattened'
-
-
 "========= Languages =========
 
 Plug 'avakhov/vim-yaml'
