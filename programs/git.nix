@@ -34,6 +34,8 @@
       core = {
         autocrlf = "input";
         excludesfile = "/Users/milesbryant/.gitignore-global";
+        fsmonitor = true;
+        untrackedcache = true;
       };
       commit.template = "~/.gitmessage";
       push.default = "current";
