@@ -22,7 +22,11 @@ let userlib = import ../userlib {}; in
       set background=dark
     '' + (userlib.concatFiles (userlib.lsFiles ./configs/neovim));
 
-    plugins = with pkgs.vimPlugins; [ gruvbox-nvim ];
+    plugins = with pkgs.vimPlugins; [
+      gruvbox-nvim
+      vim-nix
+      vim-nixhash
+    ];
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;

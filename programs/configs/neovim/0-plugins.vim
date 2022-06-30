@@ -41,8 +41,6 @@ Plug 'junegunn/limelight.vim'
 
 
 Plug 'vimwiki/vimwiki'
-Plug 'tbabej/taskwiki'
-Plug 'blindFS/vim-taskwarrior'
 Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'mattn/calendar-vim'
 
@@ -126,17 +124,6 @@ Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'zchee/deoplete-jedi'
 
 Plug 'heavenshell/vim-pydocstring'
-
-Plug 'LnL7/vim-nix'
-
-"========= SCM/Git =========
-
-"Git plugin
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
-
-"Displays git symbols in the gutter, e.g. +,-,~
-Plug 'mhinz/vim-signify'
 
 
 call plug#end()
