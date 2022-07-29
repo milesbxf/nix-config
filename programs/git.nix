@@ -47,6 +47,7 @@
       "url \"https://gist.github.com/\"".insteadOf = "gist:";
       "url \"https://bitbucket.org/\"".insteadOf = "bb:";
       "url \"git@github.com:monzo/\"".insteadOf = "mz:";
+      "url \"git@github.com:\"".insteadOf = "https://github.com/";
     };
   };
 
