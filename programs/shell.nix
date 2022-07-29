@@ -142,6 +142,8 @@
 
       fpath+=(~/.zfunc)
       source ${pkgs.kubectl-aliases}/.kubectl_aliases
+
+      [[ -s /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
   '';
 
     shellAliases = {
