@@ -22,6 +22,7 @@
     gnused
     gnused
     gomplate
+    graphviz
     httpie
     httpie
     httpstat
@@ -34,8 +35,9 @@
     kubectx
     kubernetes-helm
     kubie
-    kustomize_3
-    opa
+#    kustomize_3
+#    kustomize
+#    opa
     p7zip
     packer
     poetry
