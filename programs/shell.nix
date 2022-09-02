@@ -108,8 +108,6 @@
           sd "''${1}" "''${2}" $(rg "''${1}" -l)
       }
 
-      [[ -s ~/.zshrc-local ]] && source ~/.zshrc-local
-
       mkdir -p ~/.zfunc
 
       if [ $commands[poetry] ]; then
@@ -125,7 +123,7 @@
         kustomize() {
           unfunction "$0"
           rm -f ~/.zfunc/_kustomize
-          kustomize completion zsh > ~/.zfunc/_kustomize
+          kustomize install-completion
           $0 $@
         }
       fi
@@ -144,6 +142,9 @@
       source ${pkgs.kubectl-aliases}/.kubectl_aliases
 
       [[ -s /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
+
+      [[ -s ~/.zshrc-local ]] && source ~/.zshrc-local
+
   '';
 
     shellAliases = {
