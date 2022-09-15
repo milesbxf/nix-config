@@ -18,7 +18,7 @@
     exa
     fd
     gawk
-    gnupg
+#    gnupg
     gnused
     gnused
     gomplate
@@ -62,7 +62,7 @@
     bat.enable = true;
     fzf.enable = true;
     gh.enable = true;
-    gpg.enable = true;
+    gpg.enable = false;
     go = {
       package = pkgs.go;
       goPath = "";
