@@ -5,7 +5,7 @@
     argocd
     asciinema
     aws-iam-authenticator
-    aws-vault
+#    aws-vault
     awscli2
     bat-extras.batgrep
     cassandra
