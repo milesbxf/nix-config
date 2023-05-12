@@ -37,6 +37,7 @@
         VISUAL = "nvim";
 
         BAT_THEME = "Monokai Extended Light";
+        GOPATH = "/Users/milesbryant";
       };
     };
   };

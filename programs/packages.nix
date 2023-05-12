@@ -54,6 +54,7 @@
     tldr
     vagrant
     viddy
+    yarn
     yq-go
   ];
 
@@ -66,7 +67,7 @@
     go = {
       package = pkgs.go;
       goPath = "";
-      enable = true;
+      enable = false;
     };
     htop.enable = true;
     pet.enable = true;
