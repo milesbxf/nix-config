@@ -54,7 +54,6 @@
     tldr
     vagrant
     viddy
-    yarn
     yq-go
   ];
 
