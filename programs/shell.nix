@@ -129,7 +129,9 @@
       fi
 
       rm -f ~/.zfunc/_kubectl && kubectl completion zsh > ~/.zfunc/_kubectl
-      rm -f ~/.zfunc/_aws-vault &&aws-vault --completion-script-zsh  > ~/.zfunc/_aws-vault
+      if [ $commands[aws-vault] ]; then
+        rm -f ~/.zfunc/_aws-vault && aws-vault --completion-script-zsh  > ~/.zfunc/_aws-vault
+      fi
 
       if [ $commands[rustup] ]; then
         rm -f ~/.zfunc/_rustup && rustup completions zsh > ~/.zfunc/_rustup

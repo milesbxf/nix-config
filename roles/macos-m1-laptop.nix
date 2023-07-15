@@ -3,7 +3,7 @@
   nixpkgs.config.allowUnfree = true;
 
   nix.package = pkgs.nix;
-  nix.useDaemon = true;
+  services.nix-daemon.enable = true;
 
   nix.nixPath =
     [ "darwin=$HOME/.nix-defexpr/darwin"
