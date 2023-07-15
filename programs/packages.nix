@@ -47,6 +47,7 @@
     qrencode
     reattach-to-user-namespace
     ripgrep
+    rnix-lsp
     sd
     shellcheck
     stern
