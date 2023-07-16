@@ -1,0 +1,86 @@
+{
+  "nodes": {
+    "darwin": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1689281837,
+        "narHash": "sha256-msgwgot2/hxXzlpYltIZ7boAqBkN8XejNOhBJ07q3FY=",
+        "owner": "LnL7",
+        "repo": "nix-darwin",
+        "rev": "c806a73609e77f0c446fdad5d3ea6ca3b7ae6e5f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "LnL7",
+        "ref": "master",
+        "repo": "nix-darwin",
+        "type": "github"
+      }
+    },
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1689414552,
+        "narHash": "sha256-FS47yV7VbI2EZ5nDHHuFCH1KFrA8Zh8bnEUUi77VUCU=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "559856748982588a9eda6bfb668450ebcf006ccd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "nix-config-private": {
+      "locked": {
+        "lastModified": 1689435652,
+        "narHash": "sha256-6AZ9gDLCGaFtrMXUWinFNqqm94alLGBNPR9ChnX3y/k=",
+        "ref": "refs/heads/main",
+        "rev": "ac47a13ce9ab3cf6336aba50c91048503b6ba158",
+        "revCount": 1,
+        "type": "git",
+        "url": "ssh://git@github.com/milesbxf/nix-config-private"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/milesbxf/nix-config-private"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1689379931,
+        "narHash": "sha256-wEgqVptFqh0Wunge12uwxWyPPpMVkrzY5TWM4S5OAtU=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "1837edbd23af764a198bfd523933bc2175b10fec",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-23.05-darwin",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "darwin": "darwin",
+        "home-manager": "home-manager",
+        "nix-config-private": "nix-config-private",
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
