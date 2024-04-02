@@ -15,7 +15,7 @@
     dialog
     dogdns
     dua
-    exa
+    eza
     fd
     gawk
 #    gnupg
@@ -42,7 +42,7 @@
     packer
     poetry
     pv
-    python38
+#   python38
     qrencode
     qrencode
     reattach-to-user-namespace
@@ -53,7 +53,6 @@
     stern
     terragrunt
     tldr
-    vagrant
     viddy
     yq-go
   ];
