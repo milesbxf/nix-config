@@ -1,6 +1,8 @@
-{ config, pkgs, ...}:
 {
-
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ../nix/userinfo.nix
   ];
@@ -22,15 +24,18 @@
       };
     };
 
-    ignores = [ ".envrc" ".idea/" ];
+    ignores = [".envrc" ".idea/"];
 
-    signing = if config.userinfo.gpgKeyName != "" then {
-      key = config.userinfo.gpgKeyName;
-      signByDefault = true;
-    } else {
-      key = "";
-      signByDefault = false;
-    };
+    signing =
+      if config.userinfo.gpgKeyName != ""
+      then {
+        key = config.userinfo.gpgKeyName;
+        signByDefault = true;
+      }
+      else {
+        key = "";
+        signByDefault = false;
+      };
 
     extraConfig = {
       core = {

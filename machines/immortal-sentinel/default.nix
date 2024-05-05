@@ -1,9 +1,12 @@
-{ nixpkgs, pkgs, nix-config-private, ... }:
-let 
+{
+  nixpkgs,
+  pkgs,
+  nix-config-private,
+  ...
+}: let
   userinfo = nix-config-private.user;
   username = userinfo.username;
-in
-{
+in {
   nixpkgs.hostPlatform = "aarch64-darwin";
   nix.useDaemon = true;
 
@@ -13,7 +16,7 @@ in
     knownNetworkServices = ["USB 10/100/1000 LAN" "Ethernet Adapter (en4)" "Ethernet Adapter (en5)" "Wi-Fi" "Bluetooth PAN" "Thunderbolt 1" "Thunderbolt 2"];
   };
 
-  environment.systemPackages = [ pkgs.git ];
+  environment.systemPackages = [pkgs.git];
 
   system.keyboard.enableKeyMapping = true;
   system.keyboard.remapCapsLockToControl = true;
@@ -30,4 +33,3 @@ in
 
   programs.zsh.enable = true;
 }
-

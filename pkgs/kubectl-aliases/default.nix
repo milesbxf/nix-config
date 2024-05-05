@@ -1,5 +1,7 @@
-{ stdenv, fetchFromGitHub }:
-
+{
+  stdenv,
+  fetchFromGitHub,
+}:
 stdenv.mkDerivation rec {
   pname = "kubectl-aliases";
   version = "1.0.0";
@@ -19,4 +21,3 @@ stdenv.mkDerivation rec {
     cat ./.kubectl_aliases | sed -r 's/(kubectl.*) --watch/viddy --differences --interval=1s --shell=zsh \1/g' > $out/.kubectl_aliases
   '';
 }
-

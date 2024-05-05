@@ -1,6 +1,6 @@
-{ pkgs, ...}:
-let userlib = import ../userlib {}; in 
-{
+{pkgs, ...}: let
+  userlib = import ../userlib {};
+in {
   home.packages = with pkgs; [
     python3Packages.pynvim
   ];
@@ -9,9 +9,11 @@ let userlib = import ../userlib {}; in
     enable = true;
     withNodeJs = true;
     withPython3 = true;
-    extraConfig = ''
-    colorscheme desert
-    '' + (userlib.concatFiles (userlib.lsFiles ./configs/neovim));
+    extraConfig =
+      ''
+        colorscheme desert
+      ''
+      + (userlib.concatFiles (userlib.lsFiles ./configs/neovim));
 
     plugins = with pkgs.vimPlugins; [
       gruvbox-nvim
@@ -95,4 +97,3 @@ let userlib = import ../userlib {}; in
     map <C-H> <C-W>h
   '';
 }
-

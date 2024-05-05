@@ -1,7 +1,11 @@
-{ config, pkgs, ...}:
-let userlib = import ../userlib {}; in 
 {
-  home.packages = [ pkgs.fantasque-sans-mono];
+  config,
+  pkgs,
+  ...
+}: let
+  userlib = import ../userlib {};
+in {
+  home.packages = [pkgs.fantasque-sans-mono];
   programs.kitty.enable = true;
 
   programs.kitty.font = {
@@ -43,41 +47,41 @@ let userlib = import ../userlib {}; in
     window_alert_on_bell = "yes";
 
     # https://github.com/wdomitrz/kitty-gruvbox-theme/blob/master/gruvbox_light.conf
-    background           = "#fbf1c7";
-    foreground           = "#282828";
+    background = "#fbf1c7";
+    foreground = "#282828";
     selection_foreground = "#928374";
     selection_background = "#3c3836";
 
     # white
-    color0               = "#fbf1c7";
-    color8               = "#282828";
+    color0 = "#fbf1c7";
+    color8 = "#282828";
 
     # red
-    color1               = "#cc241d";
-    color9               = "#9d0006";
+    color1 = "#cc241d";
+    color9 = "#9d0006";
 
     # green
-    color2               = "#98971a";
-    color10              = "#79740e";
+    color2 = "#98971a";
+    color10 = "#79740e";
 
     # yellow
-    color3               = "#d79921";
-    color11              = "#b57614";
+    color3 = "#d79921";
+    color11 = "#b57614";
 
     # blue
-    color4               = "#458588";
-    color12              = "#076678";
+    color4 = "#458588";
+    color12 = "#076678";
 
     # purple
-    color5               = "#b16286";
-    color13              = "#8f3f71";
+    color5 = "#b16286";
+    color13 = "#8f3f71";
 
     # aqua
-    color6               = "#689d6a";
-    color14              = "#427b58";
+    color6 = "#689d6a";
+    color14 = "#427b58";
 
     # black
-    color7               = "#7c6f64";
-    color15              = "#282828";
+    color7 = "#7c6f64";
+    color15 = "#282828";
   };
 }

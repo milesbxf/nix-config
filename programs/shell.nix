@@ -1,12 +1,11 @@
-{ pkgs, ...}:
-{
+{pkgs, ...}: {
   home.packages = with pkgs; [
-      # pkgs.prezto-prompt-mpor
-      nix-zsh-completions
+    # pkgs.prezto-prompt-mpor
+    nix-zsh-completions
   ];
 
   programs.zsh = {
-    enable = true;  # default shell on catalina
+    enable = true; # default shell on catalina
     enableAutosuggestions = true;
     enableCompletion = true;
     defaultKeymap = "viins";
@@ -59,18 +58,18 @@
       extraModules = [];
 
       pmodules = [
-        "environment"         # general shell options & env vars
-        "terminal"            # terminal window and tab titles
-        "editor"              # key bindings. Options set in Nix editor block above
-        "history"             # history options
-        "directory"           # directory options
-        "spectrum"            # easier use of 256 color
-        "utility"             # "general" aliases/functions
-        "completion"          # tab completion
-        "prompt"              # prompt themes
+        "environment" # general shell options & env vars
+        "terminal" # terminal window and tab titles
+        "editor" # key bindings. Options set in Nix editor block above
+        "history" # history options
+        "directory" # directory options
+        "spectrum" # easier use of 256 color
+        "utility" # "general" aliases/functions
+        "completion" # tab completion
+        "prompt" # prompt themes
         "syntax-highlighting" # zsh-syntax-highlighting
-        "tmux"                # tmux aliases/autolaunch options
-        "osx"                 # maxOS aliases/functions
+        "tmux" # tmux aliases/autolaunch options
+        "osx" # maxOS aliases/functions
       ];
 
       prompt = {
@@ -155,7 +154,7 @@
 
       [[ -s ~/.zshrc-local ]] && source ~/.zshrc-local
 
-  '';
+    '';
 
     shellAliases = {
       le = "exa --long --tree --colour-scale --header --group --time-style=long-iso --ignore-glob='*.pyc' --git";
@@ -170,7 +169,6 @@
       # use a GUI pinentry
       pinentry = "pinentry-mac";
     };
-
   };
 
   programs.direnv = {

@@ -1,5 +1,7 @@
-{ stdenv, fetchurl }:
-
+{
+  stdenv,
+  fetchurl,
+}:
 stdenv.mkDerivation rec {
   pname = "git-aliases-zsh";
   version = "1.0.0";
@@ -24,4 +26,3 @@ stdenv.mkDerivation rec {
     done
   '';
 }
-

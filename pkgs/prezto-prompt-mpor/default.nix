@@ -1,5 +1,7 @@
-{ stdenv, fetchFromGitHub }:
-
+{
+  stdenv,
+  fetchFromGitHub,
+}:
 stdenv.mkDerivation rec {
   pname = "prezto-prompt-mpor";
   version = "1.0.0";
@@ -16,5 +18,3 @@ stdenv.mkDerivation rec {
 
   unpackPhase = "";
 }
-
-

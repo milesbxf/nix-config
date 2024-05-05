@@ -5,7 +5,9 @@ self: super: {
     # rev is the commit of the tag, mainly for kustomize version command output
     rev = "6a50372dd5686df22750b0c729adaf369fbf193c";
 
-    ldflags = let t = "sigs.k8s.io/kustomize/api/provenance"; in [
+    ldflags = let
+      t = "sigs.k8s.io/kustomize/api/provenance";
+    in [
       "-s -w"
       "-X ${t}.version=${version}"
       "-X ${t}.gitCommit=${rev}"
@@ -34,7 +36,7 @@ self: super: {
       '';
       homepage = "https://github.com/kubernetes-sigs/kustomize";
       license = licenses.asl20;
-      maintainers = with maintainers; [ carlosdagos vdemeester zaninime Chili-Man saschagrunert ];
+      maintainers = with maintainers; [carlosdagos vdemeester zaninime Chili-Man saschagrunert];
       mainProgram = "kustomize";
     };
   };

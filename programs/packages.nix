@@ -1,10 +1,9 @@
-{ pkgs, ...}:
-{
+{pkgs, ...}: {
   home.packages = with pkgs; [
     argocd
     asciinema
     aws-iam-authenticator
-#    aws-vault
+    #    aws-vault
     awscli2
     bat-extras.batgrep
     cassandra
@@ -17,7 +16,7 @@
     eza
     fd
     gawk
-#    gnupg
+    #    gnupg
     gnused
     gnused
     gomplate
@@ -34,14 +33,14 @@
     kubectx
     kubernetes-helm
     kubie
-#    kustomize_3
-#    kustomize
-#    opa
+    #    kustomize_3
+    #    kustomize
+    #    opa
     p7zip
     packer
     poetry
     pv
-#   python38
+    #   python38
     qrencode
     qrencode
     reattach-to-user-namespace
@@ -72,5 +71,5 @@
     zoxide.enable = true;
   };
 
-  home.sessionPath = [ "$HOME/bin" "/usr/local/kubebuilder/bin" "$HOME/.cargo/bin"];
+  home.sessionPath = ["$HOME/bin" "/usr/local/kubebuilder/bin" "$HOME/.cargo/bin"];
 }

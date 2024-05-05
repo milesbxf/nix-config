@@ -1,6 +1,8 @@
 self: super: {
-  kitty = super.kitty.overrideAttrs(old: {
-    patches = old.patches ++ [
-    ];
+  kitty = super.kitty.overrideAttrs (old: {
+    patches =
+      old.patches
+      ++ [
+      ];
   });
 }
