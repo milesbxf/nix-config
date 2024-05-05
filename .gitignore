@@ -1,3 +1,4 @@
 darwin-configuration.nix
 
-.idea/
+.idea/result/
+result
