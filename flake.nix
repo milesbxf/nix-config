@@ -28,25 +28,56 @@
     alejandra,
     ...
   }: let
-    system = "aarch64-darwin";
-    pkgs = nixpkgs.legacyPackages.${system};
-
     username = nix-config-private.user.username;
-    commonArgs = {inherit nix-config-private nixpkgs pkgs home-manager alejandra system;};
-    importWithArgs = path: import path commonArgs;
+    importWithArgs = {
+      path,
+      system,
+    }: let
+      pkgs = nixpkgs.legacyPackages.${system};
+    in (import path {inherit nix-config-private nixpkgs pkgs home-manager alejandra system;});
   in {
-    darwinConfigurations."immortal-sentinel" = darwin.lib.darwinSystem {
-      modules = [
-        ({...}: importWithArgs ./machines/immortal-sentinel/default.nix)
-        home-manager.darwinModules.home-manager
-        {
-          home-manager.users.${username} = importWithArgs ./home/${username};
-        }
-      ];
+    darwinConfigurations = {
+      "immortal-sentinel" = darwin.lib.darwinSystem {
+        modules = [
+          ({...}:
+            importWithArgs {
+              path = ./machines/immortal-sentinel/default.nix;
+              system = "aarch64-darwin";
+            })
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.users.${username} = importWithArgs {
+              path = ./home/${username};
+              system = "aarch64-darwin";
+            };
+          }
+        ];
+      };
+
+      "Miless-MacBook-Pro-2" = darwin.lib.darwinSystem {
+        modules = [
+          ({...}:
+            importWithArgs {
+              path = ./machines/Miless-MacBook-Pro-2/default.nix;
+              system = "x86_64-darwin";
+            })
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.users.${username} = importWithArgs {
+              path = ./home/${username};
+              system = "x86_64-darwin";
+            };
+          }
+        ];
+      };
     };
 
-    devShells.aarch64-darwin.default = pkgs.mkShell {
-      packages = [pkgs.bashInteractive];
-    };
+    devShells = flake-utils.lib.eachDefaultSystem (system: let
+      pkgs = nixpkgs.legacyPackages.${system};
+    in {
+      "${system}".default = pkgs.mkShell {
+        packages = [pkgs.bashInteractive];
+      };
+    });
   };
 }
