@@ -1,21 +1,20 @@
-{ nixpkgs, pkgs, nix-config-private, home-manager, ... }:
+{ nixpkgs, nix-config-private, ... }:
 let 
   userinfo = nix-config-private.user;
   username = userinfo.username;
 in
 {
-  home-manager.users.${username} = { pkgs, ... }: {
     # import custom packages
-    nixpkgs.overlays = [ (import ../pkgs) ] ++ (import ../overlays);
+    nixpkgs.overlays = [ (import ../../pkgs) ] ++ (import ../../overlays);
 
     inherit userinfo;
     imports = [
-      ../programs/packages.nix
-      ../programs/neovim.nix
-      ../programs/git.nix
-      ../programs/kitty.nix
-      ../programs/shell.nix
-      ../programs/tmux.nix
+      ../../programs/packages.nix
+      ../../programs/neovim.nix
+      ../../programs/git.nix
+      ../../programs/kitty.nix
+      ../../programs/shell.nix
+      ../../programs/tmux.nix
     ];
 
     home = {
@@ -28,6 +27,5 @@ in
         GOPATH = "/Users/${username}";
       };
     };
-  };
 }
 

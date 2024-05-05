@@ -1,7 +1,6 @@
 { pkgs, ...}:
 {
   home.packages = with pkgs; [
-    _1password
     argocd
     asciinema
     aws-iam-authenticator

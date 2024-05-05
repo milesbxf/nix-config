@@ -104,6 +104,16 @@
           cd ~/src/github.com/$1
       }
 
+      flakify() {
+        if [ ! -e flake.nix ]; then
+          nix flake new -t github:nix-community/nix-direnv .
+        elif [ ! -e .envrc ]; then
+          echo "use flake" > .envrc
+          direnv allow
+        fi
+        ${EDITOR:-vim} flake.nix
+      }
+
       find_and_replace() {
           sd "''${1}" "''${2}" $(rg "''${1}" -l)
       }
@@ -138,8 +148,6 @@
         rm -f ~/.zfunc/_cargo && rustup completions zsh cargo > ~/.zfunc/_cargo
       fi
 
-      complete -o nospace -C ${pkgs.terraform}/bin/terraform terraform
-
       fpath+=(~/.zfunc)
       source ${pkgs.kubectl-aliases}/.kubectl_aliases
 
@@ -163,5 +171,12 @@
       pinentry = "pinentry-mac";
     };
 
+  };
+
+  programs.direnv = {
+    enable = true;
+    enableBashIntegration = true;
+    enableZshIntegration = true;
+    nix-direnv.enable = true;
   };
 }

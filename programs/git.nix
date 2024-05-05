@@ -22,6 +22,8 @@
       };
     };
 
+    ignores = [ ".envrc" ".idea/" ];
+
     signing = if config.userinfo.gpgKeyName != "" then {
       key = config.userinfo.gpgKeyName;
       signByDefault = true;
