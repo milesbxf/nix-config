@@ -72,7 +72,7 @@
       };
     };
 
-    devShells = flake-utils.lib.eachDefaultSystem (system: let
+    devShell = flake-utils.lib.eachDefaultSystem (system: let
       pkgs = nixpkgs.legacyPackages.${system};
     in {
       "${system}".default = pkgs.mkShell {
