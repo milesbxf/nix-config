@@ -13,9 +13,17 @@
     nix-config-private.url = "git+ssh://git@github.com/milesbxf/nix-config-private";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, darwin, nix-config-private }: {
-    darwinConfigurations."Miless-Mac-mini" = darwin.lib.darwinSystem {
-      modules = [ ./machines-flake/Miless-Mac-mini/default.nix ];
+  outputs = inputs@{ self, nixpkgs, home-manager, darwin, nix-config-private }: 
+  let 
+    system = "aarch64-darwin";
+    pkgs = nixpkgs.legacyPackages.${system};
+    home-manager = home-manager.darwinModules.home-manager;
+  in
+  {
+    darwinConfigurations."immortal-sentinel" = darwin.lib.darwinSystem {
+      modules = [ ({...}: import ./machines-flake/immortal-sentinel/default.nix { inherit nix-config-private nixpkgs pkgs home-manager; }) ];
     };
+
+    homeConfigurations = (import ./machines-flake/home.nix { inherit nix-config-private nixpkgs pkgs home-manager; });
   };
 }
