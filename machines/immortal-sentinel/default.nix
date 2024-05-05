@@ -1,4 +1,4 @@
-{ nixpkgs, pkgs, nix-config-private, home-manager, ... }:
+{ nixpkgs, pkgs, nix-config-private, ... }:
 let 
   userinfo = nix-config-private.user;
   username = userinfo.username;

@@ -18,12 +18,16 @@
     system = "aarch64-darwin";
     pkgs = nixpkgs.legacyPackages.${system};
     home-manager = home-manager.darwinModules.home-manager;
+
+    username = nix-config-private.user.username;
+    commonArgs = { inherit nix-config-private nixpkgs pkgs home-manager; };
+    importWithArgs = path: import path commonArgs;
   in
   {
     darwinConfigurations."immortal-sentinel" = darwin.lib.darwinSystem {
-      modules = [ ({...}: import ./machines-flake/immortal-sentinel/default.nix { inherit nix-config-private nixpkgs pkgs home-manager; }) ];
+      modules = [ ({...}: importWithArgs ./machines/immortal-sentinel/default.nix) ];
     };
 
-    homeConfigurations = (import ./machines-flake/home.nix { inherit nix-config-private nixpkgs pkgs home-manager; });
+    homeConfigurations = (importWithArgs ./home/${username}/home.nix);
   };
 }

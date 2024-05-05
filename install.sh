@@ -23,9 +23,9 @@ if [[ ! -d ~/.nixpkgs ]]; then
 fi
 echo "✅ Latest Nix config is installed"
 
-if ! command -v "${NIX_BIN}/nix-build" > /dev/null; then
+if ! command -v "nix" > /dev/null; then
     nix_install_loc=/tmp/install-nix-${NIX_VERSION}
-    echo "⚠️ nix-build not found; installing nix"
+    echo "⚠️ nix not found; installing nix"
 
     echo "🔑 importing Nix GPG key"
     gpg2 --keyserver hkp://keys.gnupg.net --recv-keys B541D55301270E0BCF15CA5D8170B4726D7198DE
@@ -51,29 +51,7 @@ if ! command -v "${NIX_BIN}/nix-build" > /dev/null; then
 fi
 
 echo "✅ Nix is installed"
-source ~/.nix-profile/etc/profile.d/nix.sh
 
-if isDarwin; then
-
-    if [[ ! -s ~/.nixpkgs/darwin-configuration.nix ]]; then
-        echo "⚠️  ~/.nixpkgs/darwin-configuration.nix doesn't exist. Please define a new machine configuration there and rerun the installer"
-        exit 1
-    fi
-
-    if ! nix-channel --list | grep home-manager > /dev/null; then
-        echo "⚠️  home-manager not in list of channels; adding"
-        nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-        nix-channel --update
-    fi
-
-    if ! command -v darwin-rebuild > /dev/null; then
-        echo "⚠️  darwin-rebuild not found; installing nix-darwin"
-
-        nix-build https://github.com/LnL7/nix-darwin/archive/master.tar.gz -o /tmp/nix-darwin-result -A installer
-        /tmp/nix-darwin-result/bin/darwin-installer
-    fi
-
-    echo "✅ nix-darwin is installed"
-fi
-
-
+echo "Running initial build"
+nix build ".#darwinConfigurations.$(hostname -s).config.system.build.toplevel"
+./result/sw/bin/darwin-rebuild switch --flake .
