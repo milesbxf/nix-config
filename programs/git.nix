@@ -24,7 +24,7 @@
       };
     };
 
-    ignores = [".envrc" ".idea/"];
+    ignores = [".envrc" ".idea/" ".direnv/"];
 
     signing =
       if config.userinfo.gpgKeyName != ""
@@ -40,7 +40,6 @@
     extraConfig = {
       core = {
         autocrlf = "input";
-        excludesfile = "/Users/milesbryant/.gitignore-global";
 
         fsmonitor = true;
         untrackedcache = true;
