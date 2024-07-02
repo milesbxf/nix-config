@@ -35,45 +35,45 @@
     }: let
       pkgs = nixpkgs.legacyPackages.${system};
     in (import path {inherit nix-config-private nixpkgs pkgs home-manager alejandra system;});
-  in {
-    darwinConfigurations = {
-      "immortal-sentinel" = darwin.lib.darwinSystem {
-        modules = [
-          ({...}:
-            importWithArgs {
-              path = ./machines/immortal-sentinel/default.nix;
-              system = "aarch64-darwin";
-            })
-          home-manager.darwinModules.home-manager
-          {
-            home-manager.users.${username} = importWithArgs {
-              path = ./home/${username};
-              system = "aarch64-darwin";
-            };
-          }
-        ];
-      };
+  in
+    {
+      darwinConfigurations = {
+        "immortal-sentinel" = darwin.lib.darwinSystem {
+          modules = [
+            ({...}:
+              importWithArgs {
+                path = ./machines/immortal-sentinel/default.nix;
+                system = "aarch64-darwin";
+              })
+            home-manager.darwinModules.home-manager
+            {
+              home-manager.users.${username} = importWithArgs {
+                path = ./home/${username};
+                system = "aarch64-darwin";
+              };
+            }
+          ];
+        };
 
-      "Miless-MacBook-Pro-2" = darwin.lib.darwinSystem {
-        modules = [
-          ({...}:
-            importWithArgs {
-              path = ./machines/Miless-MacBook-Pro-2/default.nix;
-              system = "x86_64-darwin";
-            })
-          home-manager.darwinModules.home-manager
-          {
-            home-manager.users.${username} = importWithArgs {
-              path = ./home/${username};
-              system = "x86_64-darwin";
-            };
-          }
-        ];
+        "Miless-MacBook-Pro-2" = darwin.lib.darwinSystem {
+          modules = [
+            ({...}:
+              importWithArgs {
+                path = ./machines/Miless-MacBook-Pro-2/default.nix;
+                system = "x86_64-darwin";
+              })
+            home-manager.darwinModules.home-manager
+            {
+              home-manager.users.${username} = importWithArgs {
+                path = ./home/${username};
+                system = "x86_64-darwin";
+              };
+            }
+          ];
+        };
       };
-    };
-
-  } //
-    flake-utils.lib.eachDefaultSystem (system: let
+    }
+    // flake-utils.lib.eachDefaultSystem (system: let
       pkgs = nixpkgs.legacyPackages.${system};
     in rec {
       devShells.default = pkgs.mkShell {
