@@ -72,12 +72,12 @@
       };
     };
 
-    devShell = flake-utils.lib.eachDefaultSystem (system: let
+  } //
+    flake-utils.lib.eachDefaultSystem (system: let
       pkgs = nixpkgs.legacyPackages.${system};
-    in {
-      "${system}".default = pkgs.mkShell {
-        packages = [pkgs.bashInteractive];
+    in rec {
+      devShells.default = pkgs.mkShell {
+        buildInputs = [pkgs.bashInteractive];
       };
     });
-  };
 }
