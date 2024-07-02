@@ -41,19 +41,24 @@
       core = {
         autocrlf = "input";
 
+        editor = "code --wait";
+
         fsmonitor = true;
         untrackedcache = true;
       };
       commit.template = "~/.gitmessage";
+      diff.tool = "vscode";
+      "difftool \"vscode\"".cmd = "code --wait --diff $LOCAL $REMOTE";
+
       push = {
         autoSetupRemote = true;
       };
       pull.rebase = true;
       "remote \"origin\"".prune = true;
       init.defaultBranch = "main";
-      merge.tool = "vimdiff";
+      merge.tool = "vscode";
       mergetool.prompt = true;
-      "mergetool \"vimdiff\"".cmd = "nvim -f -c \"Gdiff\" \"$MERGED\"";
+      "mergetool \"vscode\"".cmd = "code --wait $MERGED";
       "url \"https://github.com/\"".insteadOf = "gh:";
       "url \"https://gist.github.com/\"".insteadOf = "gist:";
       "url \"https://bitbucket.org/\"".insteadOf = "bb:";
