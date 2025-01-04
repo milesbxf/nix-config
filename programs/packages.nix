@@ -1,5 +1,8 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
+    _1password
+    age
+    age-plugin-yubikey
     argocd
     asciinema
     aws-iam-authenticator
