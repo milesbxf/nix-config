@@ -2,9 +2,9 @@
   description = "My personal machines setup";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-23.11-darwin";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-24.11-darwin";
 
-    home-manager.url = "github:nix-community/home-manager/release-23.11";
+    home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     darwin.url = "github:LnL7/nix-darwin/master";
@@ -38,6 +38,22 @@
   in
     {
       darwinConfigurations = {
+        "Miless-Mac-mini" = darwin.lib.darwinSystem {
+          modules = [
+            ({...}:
+              importWithArgs {
+                path = ./machines/Miless-Mac-mini/default.nix;
+                system = "x86_64-darwin";
+              })
+            home-manager.darwinModules.home-manager
+            {
+              home-manager.users.${username} = importWithArgs {
+                path = ./home/${username};
+                system = "aarch64-darwin";
+              };
+            }
+          ];
+        };
         "immortal-sentinel" = darwin.lib.darwinSystem {
           modules = [
             ({...}:

@@ -1,6 +1,5 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    _1password
     age
     age-plugin-yubikey
     argocd
@@ -39,8 +38,8 @@
     #    kustomize_3
     #    kustomize
     #    opa
+    nil
     p7zip
-    packer
     poetry
     pv
     #   python38
@@ -48,7 +47,6 @@
     qrencode
     reattach-to-user-namespace
     ripgrep
-    rnix-lsp
     sd
     shellcheck
     stern

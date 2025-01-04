@@ -6,7 +6,7 @@
 
   programs.zsh = {
     enable = true; # default shell on catalina
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     enableCompletion = true;
     defaultKeymap = "viins";
 
