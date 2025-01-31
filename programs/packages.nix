@@ -7,6 +7,7 @@
     aws-iam-authenticator
     #    aws-vault
     awscli2
+    bandwhich
     bat-extras.batgrep
     cassandra
     cfssl
@@ -15,6 +16,7 @@
     dialog
     dogdns
     dua
+    dust
     eza
     fd
     gawk
@@ -41,6 +43,7 @@
     nil
     p7zip
     poetry
+    procs
     pv
     #   python38
     qrencode
@@ -52,7 +55,9 @@
     stern
     terragrunt
     tldr
+    tokei
     viddy
+    yazi
     yq-go
   ];
 

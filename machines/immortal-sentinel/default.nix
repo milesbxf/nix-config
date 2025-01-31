@@ -32,4 +32,6 @@ in {
   };
 
   programs.zsh.enable = true;
+
+  system.stateVersion = 5;
 }
