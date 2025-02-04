@@ -1,20 +1,13 @@
 {
-  nixpkgs,
-  pkgs,
-  nix-config-private,
   inputs,
+  pkgs,
   ...
 }: let
-  userinfo = nix-config-private.user;
+  userinfo = inputs.nix-config-private.user;
   username = userinfo.username;
 in {
-  imports = [
-    inputs.darwin.darwinModules.home-manager
-    inputs.nixvim.darwinModules.nixvim
-  ];
-
   nixpkgs.hostPlatform = "aarch64-darwin";
-  nix.useDaemon = true;
+  system.stateVersion = 5;
 
   networking = {
     dns = ["1.1.1.1"];
@@ -38,6 +31,4 @@ in {
   };
 
   programs.zsh.enable = true;
-
-  system.stateVersion = 5;
 }

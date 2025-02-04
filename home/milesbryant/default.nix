@@ -3,6 +3,8 @@
   nix-config-private,
   alejandra,
   system,
+  nixvim-config,
+  home-manager,
   ...
 }: let
   userinfo = nix-config-private.user;
@@ -14,7 +16,6 @@ in {
   inherit userinfo;
   imports = [
     ../../programs/packages.nix
-    ../../programs/neovim.nix
     ../../programs/git.nix
     ../../programs/kitty.nix
     ../../programs/shell.nix
@@ -31,6 +32,9 @@ in {
       GOPATH = "/Users/${username}";
     };
 
-    packages = [alejandra.defaultPackage.${system}];
+    packages = [
+      alejandra.defaultPackage.${system}
+      nixvim-config.packages.${system}.default
+    ];
   };
 }

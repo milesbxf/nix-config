@@ -16,6 +16,11 @@
 
     alejandra.url = "github:kamadorueda/alejandra/3.0.0";
     alejandra.inputs.nixpkgs.follows = "nixpkgs";
+
+    nixvim-config = {
+      url = "git+ssh://git@github.com/milesbxf/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
@@ -26,6 +31,7 @@
     nix-config-private,
     flake-utils,
     alejandra,
+    nixvim-config,
     ...
   }: let
     username = nix-config-private.user.username;
@@ -34,7 +40,7 @@
       system,
     }: let
       pkgs = nixpkgs.legacyPackages.${system};
-    in (import path {inherit nix-config-private nixpkgs pkgs home-manager alejandra system;});
+    in (import path {inherit nix-config-private nixpkgs pkgs home-manager alejandra nixvim-config system;});
   in
     {
       darwinConfigurations = {
@@ -55,12 +61,9 @@
           ];
         };
         "immortal-sentinel" = darwin.lib.darwinSystem {
+          specialArgs = {inherit inputs;};
           modules = [
-            ({...}:
-              importWithArgs {
-                path = ./machines/immortal-sentinel/default.nix;
-                system = "aarch64-darwin";
-              })
+            ./machines/immortal-sentinel/configuration.nix
             home-manager.darwinModules.home-manager
             {
               home-manager.users.${username} = importWithArgs {
