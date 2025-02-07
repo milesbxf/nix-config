@@ -25,8 +25,8 @@ in {
   home = {
     stateVersion = "21.05";
     sessionVariables = {
-      EDITOR = "code --wait";
-      VISUAL = "code --wait";
+      EDITOR = "nvim";
+      VISUAL = "nvim";
 
       BAT_THEME = "Monokai Extended Light";
       GOPATH = "/Users/${username}";

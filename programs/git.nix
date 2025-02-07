@@ -26,13 +26,7 @@
 
     ignores = [".envrc" ".idea/" ".direnv/"];
 
-    signing =
-      if config.userinfo.gpgKeyName != ""
-      then {
-        key = config.userinfo.gpgKeyName;
-        signByDefault = true;
-      }
-      else {
+    signing = {
         key = "";
         signByDefault = false;
       };
