@@ -68,7 +68,6 @@
         "completion" # tab completion
         "prompt" # prompt themes
         "syntax-highlighting" # zsh-syntax-highlighting
-        "tmux" # tmux aliases/autolaunch options
         "osx" # maxOS aliases/functions
       ];
 
@@ -82,10 +81,6 @@
 
       terminal = {
         autoTitle = true;
-      };
-
-      tmux = {
-        autoStartLocal = false;
       };
     };
     # fpath+=("${pkgs.prezto-prompt-mpor}/share/zsh/site-functions")
@@ -173,6 +168,8 @@
       far = "find_and_replace";
       ghc = "github_clone";
       pr-slack = "gh pr view $(git branch --show-current) --json title,url --template \":github-favicon: {{.title}}\n:pr-arrow: {{.url}}\" | pbcopy";
+      v = "nvim";
+      vim = "nvim";
 
       nix-build-package = "nix-build -E 'with import <nixpkgs> {}; callPackage ./default.nix {}'";
       kube-nodeports = "kubectl get services '-o=custom-columns=NAME:.metadata.name,NODEPORT:.spec.ports[0].nodePort' --no-headers | grep -v '<none>' | sort -k 2n";

@@ -17,9 +17,7 @@ in {
   imports = [
     ../../programs/packages.nix
     ../../programs/git.nix
-    ../../programs/kitty.nix
     ../../programs/shell.nix
-    ../../programs/tmux.nix
   ];
 
   home = {

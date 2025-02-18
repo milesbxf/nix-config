@@ -27,22 +27,19 @@
     ignores = [".envrc" ".idea/" ".direnv/"];
 
     signing = {
-        key = "";
-        signByDefault = false;
-      };
+      key = "";
+      signByDefault = false;
+    };
 
     extraConfig = {
       core = {
         autocrlf = "input";
 
-        editor = "code --wait";
-
         fsmonitor = true;
         untrackedcache = true;
       };
       commit.template = "~/.gitmessage";
-      diff.tool = "vscode";
-      "difftool \"vscode\"".cmd = "code --wait --diff $LOCAL $REMOTE";
+      diff.tool = "vimdiff";
 
       push = {
         autoSetupRemote = true;
@@ -50,9 +47,8 @@
       pull.rebase = true;
       "remote \"origin\"".prune = true;
       init.defaultBranch = "main";
-      merge.tool = "vscode";
+      merge.tool = "vimdiff";
       mergetool.prompt = true;
-      "mergetool \"vscode\"".cmd = "code --wait $MERGED";
       "url \"https://github.com/\"".insteadOf = "gh:";
       "url \"https://gist.github.com/\"".insteadOf = "gist:";
       "url \"https://bitbucket.org/\"".insteadOf = "bb:";
