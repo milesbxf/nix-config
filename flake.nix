@@ -40,7 +40,8 @@
       system,
     }: let
       pkgs = nixpkgs.legacyPackages.${system};
-    in (import path {inherit nix-config-private nixpkgs pkgs home-manager alejandra nixvim-config system;});
+      nixvim = nixvim-config.packages.${system}.default;
+    in (import path {inherit nix-config-private nixpkgs pkgs home-manager alejandra nixvim system;});
   in
     {
       darwinConfigurations = {
@@ -61,7 +62,9 @@
           ];
         };
         "immortal-sentinel" = darwin.lib.darwinSystem {
-          specialArgs = {inherit inputs;};
+          specialArgs = {
+            inherit inputs;
+          };
           modules = [
             ./machines/immortal-sentinel/configuration.nix
             home-manager.darwinModules.home-manager

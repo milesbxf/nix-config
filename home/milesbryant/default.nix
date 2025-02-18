@@ -3,7 +3,7 @@
   nix-config-private,
   alejandra,
   system,
-  nixvim-config,
+  nixvim,
   home-manager,
   ...
 }: let
@@ -32,7 +32,7 @@ in {
 
     packages = [
       alejandra.defaultPackage.${system}
-      nixvim-config.packages.${system}.default
+      nixvim
     ];
   };
 }
