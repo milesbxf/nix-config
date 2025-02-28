@@ -498,11 +498,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1740691703,
-        "narHash": "sha256-4EHXOi6rUsf0QVN3EV8fzjvBQ3PZ5xbJo0iDy65yfFw=",
+        "lastModified": 1740737317,
+        "narHash": "sha256-qoLKEUT3Jhb+p7vf7A603DoAB7ARM9lRbuswCEKSz80=",
         "ref": "refs/heads/main",
-        "rev": "70b999eabda589bdfd4c686fb71f22d80d171f68",
-        "revCount": 14,
+        "rev": "73e0cf5a4c548c2e9967c5bcec213e8f6665b0ba",
+        "revCount": 15,
         "type": "git",
         "url": "ssh://git@github.com/milesbxf/nixvim"
       },
