@@ -9,6 +9,7 @@
     awscli2
     bandwhich
     bat-extras.batgrep
+    cargo
     cassandra
     cfssl
     cloc
@@ -50,6 +51,7 @@
     qrencode
     reattach-to-user-namespace
     ripgrep
+    rustc
     sd
     shellcheck
     stern
