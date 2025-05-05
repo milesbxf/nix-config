@@ -361,11 +361,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1746441386,
-        "narHash": "sha256-T2Ezphu9sXm98nkMeM5aPj99ka/EiEM00RhH+23FEW8=",
+        "lastModified": 1746449215,
+        "narHash": "sha256-cfiNSkCfwkS7wXmHFIRHxOJjYHT3MotonZC2YpoaEs8=",
         "ref": "refs/heads/main",
-        "rev": "cd381db69f87fc1f8a32876cc82c83722fa0e997",
-        "revCount": 23,
+        "rev": "cc1dd55adc1495830ff96196f691653faaa64374",
+        "revCount": 26,
         "type": "git",
         "url": "ssh://git@github.com/milesbxf/nixvim"
       },
